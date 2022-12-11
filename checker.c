@@ -1,6 +1,25 @@
 #include <stdio.h>
 #include <assert.h>
 
+#define BATTERY_TEMPERATURE(temperature) (((temperature) < 0) || ((temperature) > 45))
+#define BATTERY_SOC(soc)                 (((soc) < 20) || ((soc) > 80))
+#define BATTERY_CHARGERATE(chargeRate)   (chargeRate > 0.8)
+
+static boolean IsTemperatureOK(float temperature)
+{
+  return (BATTERY_TEMPERATURE(temperature));
+}
+
+static boolean IsSocOK(float soc)
+{
+  return (BATTERY_SOC(soc));
+}
+
+static boolean IsChargeRate(float chargeRate)
+{
+  return (BATTERY_CHARGERATE(chargeRate));
+}
+
 int batteryIsOk(float temperature, float soc, float chargeRate) {
   if(temperature < 0 || temperature > 45) {
     printf("Temperature out of range!\n");
