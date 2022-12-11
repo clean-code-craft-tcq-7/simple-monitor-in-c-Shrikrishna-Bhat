@@ -5,17 +5,17 @@
 #define BATTERY_SOC(soc)                 (((soc) < 20) || ((soc) > 80))
 #define BATTERY_CHARGERATE(chargeRate)   (chargeRate > 0.8)
 
-static integer IsTemperatureOK(float temperature)
+static int IsTemperatureOK(float temperature)
 {
   return (BATTERY_TEMPERATURE(temperature));
 }
 
-static integer IsSocOK(float soc)
+static int IsSocOK(float soc)
 {
   return (BATTERY_SOC(soc));
 }
 
-static integer IsChargeRate(float chargeRate)
+static int IsChargeRate(float chargeRate)
 {
   return (BATTERY_CHARGERATE(chargeRate));
 }
