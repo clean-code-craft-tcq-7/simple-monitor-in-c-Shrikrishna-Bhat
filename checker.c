@@ -4,9 +4,9 @@
 #include "checker.h"
 
 int batteryIsOk(float temperature, float soc, float chargeRate) {
-  if(IsTemperatureOK(temperature)) {
-  } else if(IsSocOK(soc)) {
-  } else if(IsChargeRate(chargeRate)) {
+  if(IsTemperatureOK(temperature) && IsSocOK(soc) && IsChargeRate(chargeRate)) 
+  {
+    return 0;  
   }
   return 1;
 }
