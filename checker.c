@@ -3,13 +3,7 @@
 
 int IsTemperatureOK(float temperature)
 {
-  int returnValue = 1;
-  if(((temperature) < 0) || ((temperature) > 45))
-  {
-    printf("Temperature out of range!\n");
-    returnValue = 0;
-  }
-  return returnValue;
+  (((temperature) < 0) || ((temperature) > 45)) ? 0 : 1;
 }
 
 int IsSocOK(float soc)
