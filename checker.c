@@ -25,8 +25,8 @@ int IsSocOK(float soc)
 
 int IsChargeRate(float chargeRate)
 {
-  /*int returnValue = 1;
-  if(chargeRate > 0.8)
+  int returnValue;
+  /*if(chargeRate > 0.8)
   {
     printf("Charge Rate out of range!\n");
     returnValue = 0;
