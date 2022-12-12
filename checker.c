@@ -14,26 +14,12 @@ int IsTemperatureOK(float temperature)
 
 int IsSocOK(float soc)
 {
-  int returnValue = 1;
-  if(((soc) < 20) || ((soc) > 80))
-  {
-    printf("State of Charge out of range!\n");
-    returnValue = 0;
-  }
-  return returnValue;
+  (((soc) < 20) || ((soc) > 80)) ? 0 : 1;
 }
 
 int IsChargeRate(float chargeRate)
 {
-  int returnValue;
-  /*if(chargeRate > 0.8)
-  {
-    printf("Charge Rate out of range!\n");
-    returnValue = 0;
-  }
-  return returnValue;*/
-  
-  (chargeRate > 0.8) ? (returnValue = 0): (returnValue = 1);
+  (chargeRate > 0.8) ? (0):(1);
 }
 
 int batteryIsOk(float temperature, float soc, float chargeRate) 
