@@ -18,13 +18,11 @@ int IsChargeRate(float chargeRate)
 
 int batteryIsOk(float temperature, float soc, float chargeRate) 
 {
-  int status = 1, TemperatureOK = 0, SocOK = 0, ChargeRate = 0;
+  int status = 1;
   
-  TemperatureOK = IsTemperatureOK(temperature);
-  SocOK         = IsSocOK(soc);
-  ChargeRate    = IsChargeRate(chargeRate);
-  
-  //status = (TemperatureOK && SocOK && ChargeRate) ? 1 : 0 ;
+  status = IsTemperatureOK(temperature);
+  status = IsSocOK(soc);
+  status = IsChargeRate(chargeRate);
   
   return status;
 }
