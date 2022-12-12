@@ -30,11 +30,16 @@ int IsChargeRate(float chargeRate)
 
 int batteryIsOk(float temperature, float soc, float chargeRate) 
 {
+  int status;
   if(IsTemperatureOK(temperature) && IsSocOK(soc) && IsChargeRate(chargeRate)) 
   {
-    return 0;  
+    status = 0;  
   }
-  return 1;
+  else
+  {
+    status = 1;
+  }
+  return status;
 }
 
 int main() {
