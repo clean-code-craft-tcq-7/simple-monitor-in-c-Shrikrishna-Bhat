@@ -18,15 +18,15 @@ int IsChargeRate(float chargeRate)
 
 int batteryIsOk(float temperature, float soc, float chargeRate) 
 {
-  int temperature;
-  int soc;
-  int charge;
+  int temperature_l;
+  int soc_l;
+  int chargeRate_l;
   
-  temperature = IsTemperatureOK(temperature);
-  soc = IsSocOK(soc);
-  charge = IsChargeRate(chargeRate);
+  temperature_l = IsTemperatureOK(temperature);
+  soc_l = IsSocOK(soc);
+  chargeRate_l = IsChargeRate(chargeRate);
   
-  return (temperature && soc && charge);
+  return (temperature_l && soc_l && chargeRate_l);
 }
 
 int main() {
